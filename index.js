@@ -64,9 +64,9 @@ function jsonCopy(fname) {
 function mergeJson(baseJson, updatesJson) {
   const res = {};
 
-  const allProps = uniq(Object.keys(baseJson).concat(Object.keys(updatesJson)));
+  const props = Object.keys(baseJson).concat(Object.keys(updatesJson));
 
-  Object.keys(allProps).forEach((key) => {
+  uniq(props).forEach((key) => {
     if (baseJson[key] === undefined) {
       res[key] = updatesJson[key];
     } else if (isObject(baseJson[key])) {
