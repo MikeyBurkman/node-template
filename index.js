@@ -32,7 +32,7 @@ function stdCopy(fname) {
             console.log(`File/Directory ${fname} already exists, skipping it`);
             return;
         } else {
-            console.log(`Copying file/director ${fname}`);
+            console.log(`Copying file/directory ${fname}`);
             return fs.copy(src, dest);
         }
     });
