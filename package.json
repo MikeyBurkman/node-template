@@ -7,7 +7,9 @@
   "author": "MikeyBurkman",
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "^3.0.1"
+    "bluebird": "^3.5.0",
+    "fs-extra": "^3.0.1",
+    "is-plain-object": "^2.0.2"
   },
   "engines": {
     "node": ">=4"
