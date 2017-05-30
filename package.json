@@ -5,6 +5,7 @@
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
@@ -19,5 +20,12 @@
     "fs-extra": "^3.0.1",
     "is-plain-object": "^2.0.2",
     "uniq-array": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "~3.18.0",
+    "husky": "~0.13.3",
+    "lint-staged": "~3.4.1",
+    "prettier": "~1.2.2",
+    "prettier-eslint-cli": "~3.4.2"
   }
 }
