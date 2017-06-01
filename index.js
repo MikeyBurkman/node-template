@@ -39,10 +39,10 @@ function stdCopy(fname, finalName) {
   return fs.exists(dest).then((exists) => {
     if (exists) {
       // No real way to handle these, so just skip them
-      console.log(`File/Directory ${fname} already exists, skipping it`);
+      console.log(`File/Directory ${finalName} already exists, skipping it`);
       return;
     } else {
-      console.log(`Copying file/directory ${fname}`);
+      console.log(`Copying file/directory ${finalName}`);
       return fs.copy(src, dest);
     }
   });
