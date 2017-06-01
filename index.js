@@ -21,16 +21,21 @@ function copyEverything() {
     jsonCopy('package.json'),
     jsonCopy('.eslintrc'),
     stdCopy('.editorconfig'),
-    stdCopy('.gitignore'),
+    stdCopy('gitignore', '.gitignore'),
     stdCopy('index.js'),
     stdCopy('lib') // Directory
   ]);
 }
 
 // Copythe given file/directory, but only if it doesn't already exist
-function stdCopy(fname) {
+function stdCopy(fname, finalName) {
+  if (!finalName) {
+    // Npm ignores some files, like .gitignore, so we have the ability
+    //  to rename the files on copy
+    finalName = fname;
+  }
   const src = path.resolve(templateDir, fname);
-  const dest = path.resolve(destDir, fname);
+  const dest = path.resolve(destDir, finalName);
   return fs.exists(dest).then((exists) => {
     if (exists) {
       // No real way to handle these, so just skip them
